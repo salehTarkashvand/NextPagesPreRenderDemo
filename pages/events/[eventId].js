@@ -12,9 +12,9 @@ function EventDetailPage(props) {
 
   if (!event) {
     return (
-      <ErrorAlert>
-        <p>No event found!</p>
-      </ErrorAlert>
+      <div className='center'>
+        <p>loading...</p>
+      </div>
     );
   }
 
@@ -41,7 +41,8 @@ export async function getStaticProps(context){
   return {
     props:{
       selectedEvent : event
-    }
+    },
+    revalidate:600
   }
 }
 export async function getStaticPaths() {
@@ -50,7 +51,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths ,
-    fallback: false,
+    fallback: false
   };
 }
 export default EventDetailPage;
