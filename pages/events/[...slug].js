@@ -10,9 +10,9 @@ import ErrorAlert from '../../components/ui/error-alert';
 function FilteredEventsPage(props) {
  
 
-  if (!props.data) {
-    return <p className='center'>Loading...</p>;
-  }
+  // if (!props.data) {
+  //   return <p className='center'>Loading...</p>;
+  // }
 
 
 
@@ -83,7 +83,6 @@ export async function getServerSideProps(context){
 return {
   props:{
     events : filteredEvents,
-    data : filterData,
     date : {
       year : numYear,
       month : numMonth
